@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <body>
+<form name="Maths">
+    <input name="num1" placeholder="Enter Number 1"/>
+    <input name="num2" placeholder="Enter Number 2"/>
+</form>
+<button onclick="addition()"> add</button>
+<button onclick="Substraction()"> Substraction</button>
+<button onclick="Multiplication()"> Multiplication</button>
+<button onclick="Division()"> Division</button>
+<h1 id="total"> </h1>
+<script>
+    function addition(){
+        var mathsForm=document.forms["Maths"];
+        var num1=parseInt(mathsForm["num1"].value)
+        var num2=parseInt(mathsForm["num2"].value)
+        document.getElementById("total").innerHTML="The sum is: "+(num1+num2);
+    }
+
+    function Substraction(){
+        var mathsForm=document.forms["Maths"];
+        var num1=parseInt(mathsForm["num1"].value)
+        var num2=parseInt(mathsForm["num2"].value)
+        document.getElementById("total").innerHTML="The difference is: "+(num1-num2);
+    }
+        function Multiplication(){
+        var mathsForm=document.forms["Maths"];
+        var num1=parseInt(mathsForm["num1"].value)
+        var num2=parseInt(mathsForm["num2"].value)
+        document.getElementById("total").innerHTML="The Multiplication is: "+(num1*num2);
+    }
+
+        function Division(){
+        var mathsForm=document.forms["Maths"];
+        var num1=parseInt(mathsForm["num1"].value)
+        var num2=parseInt(mathsForm["num2"].value)
+        document.getElementById("total").innerHTML="The Division is: "+(num1/num2);
+    }
+    </script>
+    </body>
+    </html>

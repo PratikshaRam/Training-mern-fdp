@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For Validation</title>
+    <style>
+        .errormessage {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form id="register">
+        <input type="text" placeholder="Enter Name" id="name"/>
+        <span class="errormessage" id="errorName"></span>
+
+        <input type="email" placeholder="Enter email" id="email"/>
+        <span class="errormessage" id="errorEmail"></span>
+
+        <input type="number" placeholder="Enter mobile" id="mobile"/>
+        <span class="errormessage" id="errormobile"></span>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById("register").addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let mobile = document.getElementById("mobile").value.trim();
+
+            let valid = true;
+
+            if (name === "") {
+                document.getElementById("errorName").innerHTML = "Name is Required";
+                valid = false;
+            } else {
+                document.getElementById("errorName").innerHTML = "";
+            }
+
+            let pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!pattern.test(email)) {
+                document.getElementById("errorEmail").textContent = "Invalid email";
+                valid = false;
+            } else {
+                document.getElementById("errorEmail").textContent = "";
+            }
+
+            if (mobile.length !== 10) {
+                document.getElementById("errormobile").innerHTML = "Mobile number must be 10 digits";
+                valid = false;
+            } else {
+                document.getElementById("errormobile").innerHTML = "";
+            }
+
+            if (valid) {
+                alert("Form submitted successfully!");
+            }
+        });
+    </script>
+</body>
+</html>
