@@ -1,19 +1,43 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Header from './components/headercomponent';
-import FooterComponent from './components/FooterComponent';
-import NavBar from './components/navbarcomponent';
-import ProductCard from './components/ProductCard';
-import ProductCardNew from './components/ProductCardNew';
-import StateDemo from './components/stateDemo';
-import InputDemo from './components/inputDemo';
-import ProductInfo from './components/ProductInfo';
-import Products from './components/Products';
+// import logo from './logo.svg';
+// import './App.css';
+// import Header from './components/headercomponent';
+// import FooterComponent from './components/FooterComponent';
+// import NavBar from './components/navbarcomponent';
+// import ProductCard from './components/ProductCard';
+// //import ProductCardNew from './components/ProductCardNew';
+// import StateDemo from './components/stateDemo';
+// import InputDemo from './components/inputDemo';
+// import ProductInfo from './components/ProductInfo';
+// import Products from './components/Products';
+// import ComponentLifecycle from './components/ComponentLifecycle';
+// import Parent from './components/Parent';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './Pages/Home';        
+import About from './Pages/About';  
+import ProductsComponents from './Pages/Products';
+import ProductDetails from './Pages/ProductDetails';
+import { Link } from 'react-router-dom';
 function App() {
   return (
     <div className="App">
-      <Header />
+      <BrowserRouter>
+      <nav>
+        <Link to={"/"}>Home</Link>
+        <Link to={"/about"}>About</Link>
+        <Link to={"/products"}>ProductsComponents</Link>
+
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/products" element={<ProductsComponents />} /> 
+        <Route path="/products/:id/:title" element={<ProductDetails />} /> 
+      </Routes>
+
+      </BrowserRouter>
+      {/* <Header />
       <FooterComponent />
       <NavBar />
       <ProductCard />
@@ -40,7 +64,9 @@ function App() {
         <InputDemo />
         <ProductInfo /> 
         <Products />
-      </div>
+        <Parent/>
+        <ComponentLifecycle/>
+      </div> */}
     </div>
   );
 }
