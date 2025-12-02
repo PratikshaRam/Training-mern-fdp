@@ -1,8 +1,11 @@
-function Filters() {
+function Filters(onCategoryChange) {
     return (
-        <div>
-            <h2>Filter Products</h2>
-        </div>
+        <select onChange={(e)=> onCategoryChange(e.target.value)}>
+            <option value="all">All</option>
+            <option value="electronics">Electronics</option>
+            <option value="clothing">Clothing</option>
+            <option value="books">Books</option>
+        </select>
     );
 }   
 export default Filters;
