@@ -21,7 +21,7 @@ app.get('/students', async (req, res) => {
     }
 });
 
-app.listen(6000, () => {
+app.listen(5000, () => {
     console.log('Server is running on port 600');
 });
 // ...existing code...

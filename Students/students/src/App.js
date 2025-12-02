@@ -5,8 +5,7 @@ import axios from 'axios';
 function App() {
   const [students, setStudents] = useState([]);
   useEffect(() => {
-    // Fix: use port 6000 (not 600)
-    axios.get('http://localhost:6000/students')
+    axios.get('http://localhost:5000/students')
       .then(result => {
         setStudents(result.data);
       })
